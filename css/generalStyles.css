@@ -74,6 +74,10 @@ strong{
     text-align: center;
 }
 
+.overflow{
+    overflow: hidden;
+}
+
 .btn, .btn:link, .btn:visited{
     display: inline-block;
     font-size: 2rem;

@@ -9,6 +9,7 @@ const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
 btnNavEl.addEventListener('click', () => {
     headerEl.classList.toggle("nav-open")
+    document.getElementsByTagName("html")[0].classList.toggle("overflow")
 })
 
 //Making the sticky navigation bar appear only when hero section is crossed 
@@ -52,6 +53,7 @@ buttons.forEach(button => {
         //closing mobile navigation on selecting an option
         if(button.classList.contains("main-nav-link")){
             headerEl.classList.toggle("nav-open")
+            document.getElementsByTagName("html")[0].classList.toggle("overflow")
         }
     })
 })
