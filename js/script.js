@@ -7,9 +7,12 @@ year.textContent = currentYear;
 //Making btn navigation work when the icon is clicked.
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
+const htmlEl = document.getElementsByTagName("html")[0];
 btnNavEl.addEventListener('click', () => {
     headerEl.classList.toggle("nav-open")
-    document.getElementsByTagName("html")[0].classList.toggle("overflow")
+    if(window.innerWidth <= 944){
+        htmlEl.classList.toggle("overflow")
+    }
 })
 
 //Making the sticky navigation bar appear only when hero section is crossed 
@@ -33,7 +36,6 @@ obs.observe(document.querySelector(".section-hero"))
 const buttons = document.querySelectorAll("a:link")
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-        console.log(button.classList)
         e.preventDefault();
         const href = button.getAttribute("href");
 
@@ -53,7 +55,9 @@ buttons.forEach(button => {
         //closing mobile navigation on selecting an option
         if(button.classList.contains("main-nav-link")){
             headerEl.classList.toggle("nav-open")
-            document.getElementsByTagName("html")[0].classList.toggle("overflow")
+            if(window.innerWidth <= 944){
+                htmlEl.classList.toggle("overflow")
+            }
         }
     })
 })
